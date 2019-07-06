@@ -18,9 +18,7 @@ class Main extends React.Component {
   render() {
     return (
       <div className="container">
-        <Menubar />
-
-        <Footer />
+        
       </div>
     )
   }
