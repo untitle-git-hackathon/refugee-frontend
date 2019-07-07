@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Gesture from 'rc-gesture';
+import axios from 'axios';
 import './Chat.scss';
     
 class Chat extends React.Component {  
@@ -10,33 +11,57 @@ class Chat extends React.Component {
     this.state = {
       chats: [
         <div className="one_message_div">
-        <div className="message ref_message_div">
-          the road the road the road the road the road
-        </div>
-        <div>
-          <div className="triangle-topleft my_message" />
-        </div>
-      </div>,
-      ],
-    }
-  }
-
-  addChat() {
-    this.setState(
-      {
-        chats: [
-          ...this.state.chats,
-          <div className="one_message_div">
           <div className="message ref_message_div">
             the road the road the road the road the road
           </div>
           <div>
             <div className="triangle-topleft my_message" />
           </div>
+        </div>,
+      ],
+      storyId: 0,
+      refugeeId: 0,
+    }
+  }
+
+  addChat() {
+    axios.get(`http://localhost:8080/stories/${this.state.refugeeId}`)
+    .then(res => {
+      const story = res.data.data[this.state.storyId];
+      let storyElement;
+
+      if (story.is_from_refugee) {
+        storyElement = 
+        <div className="one_message_div">
+          <div className="message my_message">
+            the road the road the road the road the road
+          </div>
+          <div>
+            <div className="triangle-topright my_message" />
+          </div>
+      </div>
+      } else {
+        storyElement = 
+        <div className="one_message_div">
+          <div className="message ref_message">
+            the road the road the road the road the road
+          </div>
+          <div>
+            <div className="triangle-topright ref_message" />
+          </div>
         </div>
-        ]
       }
-    );
+
+      this.setState(
+        {
+          chats: [
+            ...this.state.chats,
+            storyElement
+          ],
+          storyId: this.state.storyId + 1
+        }
+      );
+    });
   }
   
   render() {
@@ -44,7 +69,6 @@ class Chat extends React.Component {
       <Gesture onSwipe={
         (gestureStatus) => { 
           this.addChat()
-          console.log(this.state.chats); 
         }
       }>
         <div className="container" onScroll={this.handleScroll}>
@@ -74,7 +98,6 @@ class Chat extends React.Component {
       </Gesture>
       )
   }
-
 }
 
 
