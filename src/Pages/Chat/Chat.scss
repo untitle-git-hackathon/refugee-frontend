@@ -1,0 +1,174 @@
+@import '../../Style/global';
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  word-break: keep-all;
+}
+
+.chat_wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+  padding: 20px;
+
+  background-color: darkslategrey;
+
+
+
+  .route_div {
+
+    .route_line_active {
+      position: absolute;
+      left: 50%;
+      border-left: 2px solid $theme-color1;
+    }
+
+    .route_line_main {
+      height: calc(100% - 80px);
+      bottom: 40px;
+    }
+
+    .route_line_active_bottom {
+      height: 32px;
+      bottom: 0;
+    }
+
+    .route_line_inactive {
+      position: absolute;
+      left: 50%;
+      border-left: 2px solid $theme-color2;
+    }
+
+    .route_line_inactive_main {
+      height: calc(100% - 80px);
+      top: 40px;
+    }
+
+    .route_line_inactive_top {
+      height: 32px;
+      top: 0;
+    }
+
+    .route_circle_active {
+      position: absolute;
+      bottom: 30px;
+      left: calc(50% - 5px);
+      width: 12px;
+      height: 12px;
+      background-color: $theme-color1;
+      border-radius: 50px;
+    }
+
+    .route_circle_inactive {
+      position: absolute;
+      top: 30px;
+      left: calc(50% - 5px);
+      width: 12px;
+      height: 12px;
+      border: 2px solid $theme-color2;
+      border-radius: 50px;
+    }
+
+    .top_location {
+      position: absolute;
+      top: 20px;
+      right: 54%;
+      font-size: 19px;
+      font-family: $font-kr;
+      color: $theme-color2;
+    }
+
+    .bottom_location {
+      position: absolute;
+      bottom: 23px;
+      right: 54%;
+      font-size: 19px;
+      font-family: $font-kr;
+      color: $theme-color1;
+    }
+  }
+
+
+
+
+  .total_message_div {
+    align-self : flex-end;
+    margin-bottom: 52px;
+
+    .one_message_div {
+      display: inline-block;
+      position: relative;
+      margin-bottom: 20px;
+      width: 100%;
+  
+      .ref_message {
+        float: left;
+      }
+    
+      .my_message {
+        float: right;
+      }
+  
+      .message {
+        border-radius: 8px;
+        background-color: white;
+        padding: 15px;
+        width: 45%;
+        font-size: 14px;
+        font-family: $font-kr;
+      }
+  
+      .triangle-topleft {
+        position: absolute;
+        bottom: -6px;
+        left: 6px;
+        width: 0;
+        height: 0;
+        border-top: 6px solid white;
+        border-right: 6px solid transparent;
+      }
+  
+      .triangle-topright {
+        position: absolute;
+        bottom: -6px;
+        right: 6px;
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 6px solid white;
+        border-left: 6px solid transparent;
+      }
+    }
+  }
+
+
+
+
+
+  .small_player_div {
+    .ref_player {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      background-color: $theme-color1;
+      width: 40px;
+      height: 40px;
+      border-radius: 50px;
+    }
+
+    .my_player {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      background-color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+  }
+}

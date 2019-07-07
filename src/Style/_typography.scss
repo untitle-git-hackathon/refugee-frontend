@@ -5,31 +5,9 @@
 **/
 /* ------------------------------------------------------------------ */
 
-// 나눔 Square 서체 import
-@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
-// Spoqa Han Sans 서체 import
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
-// Roboto 서체 import
-@import url('https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet');
-// Open Sans 서체 import
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+// Noto Sans 서체 import
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean');
 
 /* 폰트는 나눔 Square 서체를 컨셉적 메인으로 합니다. 한글과 본문에서 사용합니다.
 300, 400, 700, 800의 weight 를 지원합니다.*/
-$font-kr : ('NanumSquare','Spoqa Han Sans', sans-serif);
-
-/* 대부분의 한글 본문 폰트는 Spoqa Han Sans를 사용합니다.*/
-$font-kr2 : ('Spoqa Han Sans', sans-serif);
-
-/* 영어 폰트입니다.
-굵기는 300, 700 지원합니다. 숙소 이름 등에는 700, 나머지 경우에 특별히 영어 서체를 쓸 일은 없을 듯 하지만
-혹시라도 쓰게 된다면 300을 쓰시는 것을 추천해요!!*/
-$font-en : ('Roboto', sans-serif);
-
-/*숫자용 폰트입니다.*/
-$font-nb : ('Open Sans', sans-serif);
-
-
-
-/* 본문 폰트 사이즈*/
-$font-body : 16px;
+$font-kr : ('Noto Sans KR', sans-serif);
