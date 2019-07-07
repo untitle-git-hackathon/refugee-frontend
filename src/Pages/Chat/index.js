@@ -25,7 +25,11 @@ class Chat extends React.Component {
   }
 
   addChat() {
-    axios.get(`http://localhost:8080/stories/${this.state.refugeeId}`)
+    var config = {
+      headers: {'Access-Control-Allow-Origin': '*'}
+  };
+  
+    axios.get(`http://localhost:8000/story/${this.state.refugeeId}`, config)
     .then(res => {
       const story = res.data.data[this.state.storyId];
       let storyElement;
