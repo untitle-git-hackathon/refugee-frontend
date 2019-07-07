@@ -1,0 +1,94 @@
+@import '../../Style/global';
+
+
+.showCha_wrapper {
+  background-size: cover;
+  background-repeat: none;
+  height: 100%;
+
+  .what_cha_div {
+    white-space: nowrap;
+    overflow: auto;
+  }
+}
+
+.horiz_scroll_div_show {
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+}
+
+.horiz_scroll_div_hide {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.horiz_scroll_div {
+  padding-top: 5%;
+  white-space: nowrap;
+  overflow: auto;
+
+  .body_div {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 50px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .player_num {
+      left: calc(50% - 40px);
+      width: 80px;
+      position: absolute;
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      color: $theme-color1;
+    }
+  }
+
+
+  .first_person_body {
+    margin-left: calc(50% - 65px);
+  }
+
+  .person_body {
+    margin-left: calc(50% - 100px);
+    margin-bottom: 50px;
+  }
+
+  .last_person_body {
+    margin-left: calc(50% - 100px);
+    margin-right: calc(50% - 65px);
+    margin-bottom: 50px;
+  }
+
+  .person {
+    margin-top: 100px;
+  }
+}
+
+.play_btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 68px;
+  background-color: $theme-color1;
+  text-align: center;
+  font-size: 24px;
+  color: $theme-color3;
+  line-height: 65px;
+}
+
+.background_hide {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.background_show {
+  position: absolute;
+  opacity: 1;
+  z-index: 100;
+  transition: opacity 0.3s ease-out;
+}
