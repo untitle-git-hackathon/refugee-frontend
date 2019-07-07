@@ -1,1 +1,29 @@
 @import '../../Style/global';
+
+
+.main_wrapper {
+  height: 100%;
+  background-color: $theme-color3;
+  // overflow: hidden;
+
+  .mainImg_hide {
+    margin-top: 700px;
+  }
+  .main_img {
+    transition: margin-top 1.8s ease-in-out;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+  }
+
+
+  .horiz_scroll_div_show {
+    top: 0;
+    white-space: nowrap;
+    overflow: auto;
+
+    .body_div {
+      display: inline-block;
+    }
+  }
+}

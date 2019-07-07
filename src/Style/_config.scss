@@ -7,73 +7,15 @@
 
 
 // 메인 컬러셋 : 추후 변경 가능
-// 1번 컬러는 메인 컬러. 밝고 신뢰감을 주는 파란색입니다.
-$theme-color1 : rgba(0, 129, 255, 1);
-// 2번 컬러는 대부분의 글씨에 쓰이는 진한 회색입니다. 자연스럽고 진한 회색.
-$theme-color2 : #171717;
-// 3번 컬러는 옅은 회색입니다. 테두리 등에 쓰입니다.
-$theme-color3 : #e0e0e0;
-// 4번 컬러는 약간 어두운 파란색입니다. 배경색 등에 쓰입니다.
-$theme-color4 : #1271c3;
-// 5번 컬러는 약간 진한 회색입니다. 2번 컬러가 부담스러울 때 씁니다.
-$theme-color5 : #333;
+$theme-color1 : rgb(252, 210, 119);
+$theme-color2 : #867542;
+// 3번 컬러는 본문에 사용.
+$theme-color3 : #3c3c3c;
+
+// 임시 색
+$theme-color4 : #9fb6bb;
 
 
 /*// 1번 컬러 기준 조금 더 밝은 색과 어두운 색 버젼.
 $dark-color1 : darken( $theme-color1, 20% );
 $light-color1 : lighten( $theme-color1, 20% );*/
-
-
-/* 미디어 쿼리를 쉽게 활용하기 위한 브레이크 포인트
- 브레이크 포인트 별로 폰트 사이즈 등을 다르게 하는 데 쓰입니다.
- 추후 팀에서 만드는 결과물에 따라 수치는 조정될 예정입니다.*/
-
-$breakpoints: (
-  'small': (max-width: 500px),
-  'medium': (max-width: 768px),
-  'desktop': (min-width: 769px)
-);
-
-
-/*각 컴포넌트의 scss 파일 작성 시 반응형 구현을 쉽게 하고자 만든 것입니다.
-아직 이해중.*/
-
-@mixin respond-to($breakpoint) {
-  $raw-query: map-get($breakpoints, $breakpoint);
-
-  @if $raw-query {
-    $query: if(
-      type-of($raw-query) == 'string',
-      unquote($raw-query),
-      inspect($raw-query)
-    );
-
-    @media #{$query} {
-      @content;
-    }
-  } @else {
-    @error 'No value found for `#{$breakpoint}`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  }
-}
-
-/**
-위의 respond-to() 활용예시 입니다.
-
-.foo {
-  color: red;
-
-  @include respond-to('medium') {
-    color: blue;
-  }
-}
-
-이렇게 코드를 작성할 경우 해상도가 medium 사이즈로 줄어들 경우 컬러값이 파란색이 됩니다.
-
-**/
-
-
-
-
-$mobile: "screen and (max-width: 768px)";
-$desktop: "(min-width: 769px)";
